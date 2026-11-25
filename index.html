@@ -58,29 +58,57 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--pri2);border-col
 .bill{background:var(--navy);color:#fff;border-radius:12px;padding:16px;text-align:center}
 .bill .code{font-size:24px;font-weight:800;letter-spacing:2px;margin:8px 0;color:var(--gold)}
 
-/* ===== WEB / DESKTOP (>=900px) — sidebar ala Pippin ===== */
-@media(min-width:900px){
-body{background:var(--bg);display:block}
-.phone{width:100%;height:100vh;margin:0;border-radius:0;box-shadow:none;background:var(--bg)}
-.hd{padding:18px 32px 18px 292px;min-height:64px}
-.hd h1{font-size:18px}
-.sc{padding:28px 32px 120px 292px}
-.sc>*{max-width:880px}
-.tabsr,.prog{margin-left:260px}
-.tb{top:0;bottom:0;left:0;right:auto;width:260px;flex-direction:column;justify-content:flex-start;padding:84px 12px 16px;background:var(--side);border-top:0;border-right:1px solid var(--bd);gap:4px}
-.tb:before{content:"⚡ Flash Merek";position:absolute;top:22px;left:20px;font-weight:800;font-size:17px;color:var(--tx)}
-.tb button{flex:none;display:flex;align-items:center;gap:12px;font-size:14px;color:var(--tx);padding:11px 14px;border-radius:8px;text-align:left}
-.tb button span{font-size:17px;display:inline}
-.tb button.on{background:var(--sel);color:var(--tx);font-weight:600}
-.ft{left:260px;padding:16px 32px 24px;background:linear-gradient(transparent,var(--bg) 35%)}
-.ft .btn{max-width:420px}
-.sheet{align-items:center;justify-content:center}
-.sheet>div{max-width:560px;border-radius:16px}
-.lgg{grid-template-columns:repeat(4,1fr)}
-.hero{padding:32px}.hero div[style*="font-size:25px"]{font-size:38px!important}
-/* screens without sidebar (landing, asesmen, login, onboarding) */
-.nosb .hd{padding-left:32px}.nosb .sc{padding-left:max(32px,calc(50% - 440px))}.nosb .tabsr,.nosb .prog{margin-left:0}.nosb .ft{left:0;padding-left:max(32px,calc(50% - 440px))}
-}
+
+/* ================= WEB LAYOUT (≥1000px) ================= */
+body.web{display:block;background:var(--bg)}
+.phone.web{width:100%;height:100vh;margin:0;border-radius:0;box-shadow:none;display:block;overflow:hidden}
+.web .wapp{display:flex;height:100vh}
+.web .wside{width:256px;flex:none;background:var(--side);border-right:1px solid var(--bd);display:flex;flex-direction:column;padding:16px 10px}
+.web .wbrand{display:flex;align-items:center;gap:10px;padding:4px 10px 18px;font-weight:800;font-size:17px}
+.web .wlbl{font-size:12px;color:var(--mu);font-weight:600;padding:14px 12px 6px}
+.web .wnav{display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:8px;font-size:14px;color:var(--tx);cursor:pointer;border:0;background:none;width:100%;text-align:left}
+.web .wnav:hover{background:#E7EAEE}.web .wnav.on{background:var(--sel);font-weight:600}
+.web .wnav .cnt{margin-left:auto;font-size:12px;color:var(--sub);font-weight:600}
+.web .wmain{flex:1;display:flex;flex-direction:column;min-width:0}
+.web .wtop{height:64px;flex:none;display:flex;align-items:center;gap:12px;padding:0 32px;background:var(--sf);border-bottom:1px solid var(--bd)}
+.web .wtop h1{font-size:17px;font-weight:600;flex:1}
+.web .wsearch{display:flex;align-items:center;gap:8px;border:1px solid var(--bd);border-radius:8px;padding:8px 12px;font-size:14px;color:var(--sub);width:260px;background:var(--sf)}
+.web .wbody{flex:1;overflow:auto;padding:32px}
+.web .wpage{max-width:1240px;margin:0 auto}
+.web .wh1{font-size:30px;font-weight:700;margin-bottom:4px}
+.web .wsub{color:var(--sub);font-size:15px;margin-bottom:24px}
+.web .btn{width:auto;display:inline-flex;align-items:center;gap:8px;padding:11px 18px;font-size:14px;border-radius:8px}
+.web .btn.blk{display:flex;width:100%;justify-content:center}
+.web .card{padding:20px;border-radius:12px}
+.web .g2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.web .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.web .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.web .kpi b{font-size:28px;display:block;margin-top:6px}.web .kpi span{font-size:13px;color:var(--sub)}
+.web .sheet{align-items:center;justify-content:center}.web .sheet>div{max-width:560px;border-radius:16px;padding:24px}
+.web .toast{left:auto;right:32px;top:80px;width:360px}
+/* wizard */
+.web .wz{display:grid;grid-template-columns:220px 1fr 320px;gap:24px;align-items:start}
+.web .wstep{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;font-size:14px;cursor:pointer;color:var(--sub)}
+.web .wstep .num{width:24px;height:24px;font-size:12px}
+.web .wstep.on{background:var(--sel);color:var(--tx);font-weight:600}.web .wstep.on .num{background:var(--pri);color:#fff}
+.web .wform .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
+.web .wform .fgrid>*{grid-column:1/-1}.web .wform .fgrid>.fld{grid-column:auto}
+.web .wform .opt{display:inline-flex;width:calc(50% - 6px);margin-right:8px;vertical-align:top}
+.web .wform .opt:nth-of-type(2n){margin-right:0}
+.web .wfoot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--bd);margin-top:24px;padding-top:16px}
+.web .sticky{position:sticky;top:0}
+/* landing */
+.web .lnav{height:72px;display:flex;align-items:center;gap:28px;padding:0 48px;background:var(--sf);border-bottom:1px solid var(--bd)}
+.web .lnav a{font-size:14px;color:var(--tx);cursor:pointer}
+.web .lwrap{max-width:1200px;margin:0 auto;padding:0 48px}
+.web .lhero{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding:64px 0 48px}
+.web .lhero h2{font-size:58px;line-height:1.05;font-weight:800;letter-spacing:-.02em}
+.web .lhero p{font-size:18px;color:var(--sub);line-height:1.5;margin:20px 0 28px;max-width:520px}
+.web .scorecard{background:var(--sf);border:1px solid var(--bd);border-radius:20px;padding:32px;box-shadow:0 12px 40px rgba(31,79,184,.12)}
+.web .bigring{width:200px;height:200px;border-radius:50%;display:grid;place-items:center;margin:16px auto}
+.web .bigring b{width:164px;height:164px;border-radius:50%;background:var(--sf);display:grid;place-items:center;font-size:52px;font-weight:800}
+.web .band{background:var(--navy);color:#fff;border-radius:20px;padding:40px;display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center;margin:20px 0}
+.web .band .lgi{background:#fff}
 </style></head><body><div class="phone" id="app"></div>
 <script>
 /* ===== STATE ===== */
@@ -180,8 +208,8 @@ return '<div class="prog"><i style="width:'+((t+1)/TABS.length*100)+'%"></i></di
 '<div class="tabsr">'+TABS.map(function(x,i){return '<span class="'+(i==t?'on':i<t?'dn':'')+'" onclick="'+act(function(){if(S.billCode&&i<8)return toast('Data terkunci setelah kode billing dibuat');keep();S.tab=i;render()})+'">'+(i<t?'✓ ':'')+x+'</span>'}).join('')+'</div><div class="sc">'+r.h+'</div>'+(r.noft?'':'<div class="ft"><button class="btn" '+(r.ok?'':'disabled')+' onclick="'+act(function(){keep();if(r.next){r.next();return}S.tab++;render()})+'">'+(r.cta||'Simpan & lanjutkan')+'</button></div>')}
 var FK=['nama','nik','lahir','hp','email','prov','kota','alamat','pos','prioNeg','prioNo','merek','desk','warna','translit','discl','kel'];
 function keep(){FK.forEach(function(k){var e=document.getElementById('f_'+k);if(e)S.f[k]=e.value})}
-function fi(k,lb,ph,h,req,type){return '<label class="l">'+lb+(req?' <i>*</i>':'')+'</label><input id="f_'+k+'" type="'+(type||'text')+'" value="'+esc(S.f[k])+'" placeholder="'+ph+'">'+(h?'<div class="hint">'+h+'</div>':'')}
-function sel(k,lb,list){return '<label class="l">'+lb+' <i>*</i></label><select id="f_'+k+'"><option value="">-Pilih-</option>'+list.map(function(o){return '<option'+(S.f[k]==o?' selected':'')+'>'+o+'</option>'}).join('')+'</select>'}
+function fi(k,lb,ph,h,req,type){return '<div class="fld"><label class="l">'+lb+(req?' <i>*</i>':'')+'</label><input id="f_'+k+'" type="'+(type||'text')+'" value="'+esc(S.f[k])+'" placeholder="'+ph+'">'+(h?'<div class="hint">'+h+'</div>':'')+'</div>'}
+function sel(k,lb,list){return '<div class="fld"><label class="l">'+lb+' <i>*</i></label><select id="f_'+k+'"><option value="">-Pilih-</option>'+list.map(function(o){return '<option'+(S.f[k]==o?' selected':'')+'>'+o+'</option>'}).join('')+'</select></div>'}
 function tG(){return {ok:true,h:'<div class="h2">Tipe & jenis permohonan</div><p class="p">Sama dengan Tab General di merek.dgip.go.id.</p><label class="l">Tipe permohonan <i>*</i></label>'+['Merek Dagang','Merek Jasa','Merek Dagang & Jasa','Merek Kolektif'].map(function(x){return opt(S.f.tipe==x,x,'',function(){S.f.tipe=x;render()})}).join('')+
 '<label class="l">Jenis permohonan <i>*</i></label>'+opt(S.f.jenis=='UMK','Usaha Mikro dan Usaha Kecil','Tarif UMK · wajib bukti UMK + Surat Pernyataan bermaterai',function(){S.f.jenis='UMK';render()})+opt(S.f.jenis=='Umum','Umum','Tarif umum',function(){S.f.jenis='Umum';render()})}}
 function tP(){var ok=S.f.nama&&S.f.email;return {ok:true,h:'<div class="h2">Data pemohon</div><p class="p">Pemilik merek (klien), sesuai KTP.</p><label class="l">Jenis pemohon <i>*</i></label>'+chips(['Perorangan','Badan Hukum'],S.f.pmhTipe,function(x){keep();S.f.pmhTipe=x;render()})+
@@ -234,9 +262,80 @@ return hdr(esc(c.n),function(){go('track')})+'<div class="sc"><div class="card">
 function track(){var L=S.role=='own'?S.mine:S.clients;return hdr('Tracking')+'<div class="sc"><div class="row" style="margin-bottom:10px"><p class="p gr" style="font-size:13px">'+L.length+' pendaftaran merek</p><button class="btn sm" onclick="'+act(function(){S.tab=0;go('wiz')})+'">+ Daftar Merek Baru</button></div>'+ttable(L)+'<div style="display:none">'+ST.map(function(s,i){var l=S.clients.filter(function(c){return c.st==i});return ''}).join('')+'</div></div>'+nav('track')}
 function me(){return hdr('Profil')+'<div class="sc"><div class="card">'+[['Nama',S.prof.nama],['No. konsultan',S.prof.noKons||'—'],['Kantor',S.prof.kantor||'—']].map(function(r){return '<div class="kv"><span>'+r[0]+'</span><span>'+esc(r[1])+'</span></div>'}).join('')+'</div><button class="btn gh" onclick="'+act(function(){S.ob=0;go('land')})+'">Kembali ke halaman pembuka</button></div>'+nav('me')}
 
+
+/* ================= WEB VIEWS ================= */
+function isWeb(){return window.innerWidth>=1000}
+function wside(on){var ks=S.role=='kons',L=ks?S.clients:S.mine;
+var it=function(k,ic,t,fn,cnt){return '<button class="wnav'+(on==k?' on':'')+'" onclick="'+act(fn)+'"><span>'+ic+'</span>'+t+(cnt!=null?'<span class="cnt">'+cnt+'</span>':'')+'</button>'};
+return '<aside class="wside"><div class="wbrand"><div class="lg0">⚡</div>Flash Merek</div><div class="wlbl">Navigasi</div>'+
+it('home','🏠',ks?'Beranda':'Merek Saya',function(){go('home')})+it('track','📍','Tracking',function(){go('track')},L.length)+it('wiz','📝','Daftar Merek Baru',function(){S.tab=0;go('wiz')})+it('studio','🎨','Logo Studio',function(){go('studio')})+
+'<div class="wlbl">Pra-cek</div>'+it('asm','🧭','Asesmen kesiapan',function(){S.asm={i:0,a:[]};go('asm')})+it('skm','🔎','Cek kelas (SKM)',function(){skmSheet()})+
+'<div style="flex:1"></div>'+it('help','❓','Bantuan',function(){toast('Pusat bantuan (simulasi)')})+it('me','👤',esc((S.prof.nama||'Profil').split(' ')[0]),function(){go('me')})+'</aside>'}
+function wshell(on,title,actions,content){return '<div class="wapp">'+wside(on)+'<div class="wmain"><div class="wtop"><h1>'+title+'</h1><div class="wsearch">🔍 Cari merek / no. permohonan</div>'+(actions||'')+'<span style="font-size:18px;cursor:pointer">🔔</span></div><div class="wbody"><div class="wpage">'+content+'</div></div></div></div>'}
+function newBtn(){return '<button class="btn" onclick="'+act(function(){S.tab=0;go('wiz')})+'">＋ Daftar Merek Baru</button>'}
+
+/* --- Landing --- */
+function wLand(){var c=S.logo.nama||'Kopi Lereng',col=PAL[S.logo.sty][0];
+return '<div style="height:100vh;overflow:auto"><nav class="lnav"><div class="row" style="gap:10px"><div class="lg0">⚡</div><b style="font-size:18px">Flash Merek</b></div><a onclick="'+act(function(){S.asm={i:0,a:[]};go('asm')})+'">Asesmen</a><a onclick="'+act(function(){skmSheet()})+'">Cek Kelas</a><a onclick="'+act(function(){go('studio')})+'">Logo Studio</a><a onclick="'+act(function(){document.getElementById('harga').scrollIntoView({behavior:'smooth'})})+'">Harga</a><span class="gr"></span><a onclick="'+act(function(){S.role='kons';S.ob=1;go('ob')})+'">Konsultan KI · Masuk</a><button class="btn" onclick="'+act(function(){S.role='own';S.lg=0;go('login')})+'">Ajukan merek</button></nav>'+
+'<div class="lwrap"><section class="lhero"><div><span class="pill in">Jasa pendaftaran merek DJKI · oleh Konsultan KI</span><h2 style="margin-top:18px">Urusan merek,<br>tanpa ribet.</h2><p>Cek nama, siapkan logo, isi formulir DJKI, sampai pantau sertifikat — semua di satu tempat.</p>'+
+'<div class="card" style="padding:20px;max-width:540px"><b style="font-size:15px">🔎 Produk Anda masuk kelas berapa?</b><div class="hint" style="margin:4px 0 12px">Cari uraian baku dari Sistem Klasifikasi Merek (SKM) DJKI.</div><div class="row"><input id="lq" class="gr" placeholder="mis. kopi, batik, keripik"><button class="btn" onclick="'+act(function(){skmSheet(gv('lq'))})+'">Cek SKM</button></div></div></div>'+
+'<div class="scorecard"><div class="sec" style="margin:0;text-align:center">Skor kesiapan merek Anda</div><div class="bigring" style="background:conic-gradient(var(--pri) 0 12%,var(--soft) 12% 100%)"><b style="color:var(--mu)">?%</b></div><div style="text-align:center"><div class="h2">Seberapa siap Anda mendaftar?</div><p class="p" style="margin:6px 0 20px">6 pertanyaan · 1 menit · hasil dikirim ke email</p><button class="btn blk" style="padding:15px;font-size:15px" onclick="'+act(function(){S.asm={i:0,a:[]};go('asm')})+'">Cek kesiapan sekarang — gratis</button></div><div style="margin-top:20px;font-size:13px;color:var(--sub);display:grid;grid-template-columns:1fr 1fr;gap:8px">'+['✓ Kemiripan nama (PDKI)','✓ Kelas & uraian (SKM)','✓ Jenis pemohon','✓ Bukti UMK','✓ Tanda tangan','✓ Logo — opsional'].map(function(x){return '<div>'+x+'</div>'}).join('')+'</div></div></section>'+
+'<section class="band"><div><span class="pill wn">Unggulan</span><div style="font-size:32px;font-weight:800;margin:14px 0 10px;line-height:1.15">Nama merek is all you need.</div><p style="opacity:.85;line-height:1.6">Belum punya logo? Logo Studio membuat 4 opsi etiket siap-DJKI — JPG ≤2MB, deskripsi & warna langsung terisi di formulir.</p><button class="btn" style="margin-top:20px;background:#fff;color:var(--pri)" onclick="'+act(function(){go('studio')})+'">🎨 Coba Logo Studio</button></div><div class="g4">'+LOGOS.map(function(f){return '<div class="lgi">'+f(c,col)+'</div>'}).join('')+'</div></section>'+
+'<section id="harga" class="g2" style="padding:28px 0 64px;align-items:center"><div><div class="sec">Harga</div><div style="font-size:32px;font-weight:800;line-height:1.15">Satu harga, semua beres.</div><p class="p" style="margin-top:10px;font-size:16px">Dari asesmen sampai sertifikat. Tanpa biaya tersembunyi.</p></div>'+pricing().replace('<div class="sec">Paket harga</div>','')+'</section></div></div>'}
+
+/* --- Asesmen --- */
+function wAsm(){var q=S.asm.i;if(q>=AQ.length)return wAsmRes();var Q=AQ[q],cur=S.asm.a[q];
+return wFocus('Asesmen kesiapan · '+(q+1)+'/'+AQ.length,function(){if(q==0)go(S.prof.nama?'home':'land');else{S.asm.i--;render()}},
+'<div class="prog" style="border-radius:4px;margin-bottom:28px"><i style="width:'+((q+1)/AQ.length*100)+'%"></i></div><div class="g2" style="grid-template-columns:1.3fr 1fr;align-items:start"><div><div class="wh1" style="font-size:26px">'+Q.q+'</div><div style="margin-top:20px">'+Q.o.map(function(o,i){return opt(cur===i,o[0],'',function(){S.asm.a[q]=i;render()})}).join('')+'</div><div style="margin-top:20px"><button class="btn" '+(cur===undefined?'disabled':'')+' onclick="'+act(function(){S.asm.i++;render()})+'">'+(q==AQ.length-1?'Lihat skor saya →':'Lanjut →')+'</button></div></div><div class="card" style="background:var(--side)"><b>💡 Kenapa ini penting</b><p class="p" style="margin-top:8px;font-size:14px">'+Q.tip+'</p>'+(Q.skm?'<button class="btn gh" style="margin-top:14px" onclick="'+act(function(){skmSheet()})+'">🔎 Cari di SKM</button>':'')+'</div></div>')}
+function wFocus(t,back,body){return '<div style="height:100vh;overflow:auto"><nav class="lnav"><button class="bk" onclick="'+act(back)+'">‹</button><div class="row" style="gap:10px"><div class="lg0">⚡</div><b>Flash Merek</b></div><span class="gr" style="text-align:center;color:var(--sub);font-size:14px">'+t+'</span><span style="width:120px"></span></nav><div style="max-width:960px;margin:0 auto;padding:48px">'+body+'</div></div>'}
+function wAsmRes(){var sc=0,gaps=[];S.asm.needLogo=0;AQ.forEach(function(Q,i){var raw=Q.o[S.asm.a[i]][1],p=Q.logo?2:raw;if(Q.logo&&raw<2)S.asm.needLogo=1;sc+=p;if(p<2)gaps.push(Q)});var pct=Math.round(sc/12*100),c=pct>=80?'var(--ok)':pct>=50?'var(--wn)':'var(--er)';
+return wFocus('Hasil asesmen',function(){go('land')},'<div class="g2" style="grid-template-columns:1fr 1.1fr;align-items:start"><div class="scorecard" style="text-align:center"><div class="sec" style="margin:0">Skor kesiapan</div><div class="bigring" style="background:conic-gradient('+c+' '+pct+'%,var(--soft) 0)"><b style="color:'+c+'">'+pct+'%</b></div><div class="h2">'+(pct>=80?'Siap didaftarkan!':pct>=50?'Hampir siap':'Perlu persiapan')+'</div><p class="p">'+(gaps.length?gaps.length+' hal perlu dilengkapi':'Semua syarat utama terpenuhi')+'</p><div style="margin-top:22px">'+(pct>=80?'<button class="btn blk" style="padding:15px" onclick="'+act(function(){S.role='own';S.lg=0;go('login')})+'">Anda siap — Ajukan merek →</button>':'<button class="btn blk" onclick="'+act(function(){S.role='own';S.lg=0;go('login')})+'">Ajukan, dibantu konsultan</button>')+'</div><div class="row" style="margin-top:16px"><input id="ae" class="gr" type="email" value="'+esc(S.ue||'')+'" placeholder="Kirim hasil ke email"><button class="btn gh" onclick="'+act(function(){var m=gv('ae');if(m.indexOf('@')<1){toast('Email belum valid');return}S.ue=m;toast('Hasil asesmen ('+pct+'%) dikirim ke '+m)})+'">📧 Kirim</button></div></div><div>'+
+(S.asm.needLogo?'<div class="card" style="background:var(--okbg);border-color:#BFE3CD"><b>🎨 Belum punya logo? Tidak masalah.</b><p class="p" style="margin:6px 0 12px;font-size:14px">Nama merek is all you need — Logo Studio membuatnya untuk Anda.</p><button class="btn" onclick="'+act(function(){go('studio')})+'">Buat logo sekarang</button></div>':'')+
+(gaps.length?'<div class="sec">Yang perlu dilengkapi</div>'+gaps.map(function(Q){return '<div class="card"><b style="font-size:14px">'+Q.q+'</b><p class="p" style="font-size:13px;margin-top:6px">'+Q.tip+'</p>'+(Q.skm?'<button class="btn gh" style="margin-top:10px" onclick="'+act(function(){skmSheet()})+'">Cari kelas di SKM</button>':'')+'</div>'}).join(''):'<div class="card"><b>✓ Tidak ada kekurangan</b><p class="p" style="margin-top:6px;font-size:14px">Lanjutkan pengajuan — formulir DJKI akan terisi dari data Anda.</p></div>')+'</div></div>')}
+
+/* --- Login OTP --- */
+function wLogin(){var right=!S.lg?'<div class="wh1">Ajukan merek</div><p class="wsub">Cukup nama & email. Kami kirim kode OTP — tanpa password.</p><label class="l">Nama lengkap <i>*</i></label><input id="un" value="'+esc(S.prof.nama)+'" placeholder="Sari Wulandari"><label class="l">Email <i>*</i></label><input id="ue" type="email" value="'+esc(S.ue||'')+'" placeholder="nama@email.com"><button class="btn blk" style="margin-top:22px;padding:14px" onclick="'+act(function(){var n=gv('un'),m=gv('ue');if(!n||m.indexOf('@')<1){toast('Isi nama & email yang valid');return}S.prof.nama=n;S.ue=m;S.lg=1;render();toast('Kode OTP dikirim ke '+m+' (demo: 123456)')})+'">Kirim kode OTP</button>'
+:'<div class="wh1">Verifikasi email</div><p class="wsub">Masukkan 6 digit kode yang dikirim ke <b>'+esc(S.ue)+'</b>. Demo: 123456</p><input id="otp" inputmode="numeric" maxlength="6" placeholder="••••••" style="font-size:30px;letter-spacing:14px;text-align:center"><button class="btn blk" style="margin-top:22px;padding:14px" onclick="'+act(function(){if(gv('otp')!='123456'){toast('Kode salah — coba 123456');return}S.f.nama=S.f.nama||S.prof.nama;S.f.email=S.f.email||S.ue;go('home');toast('Masuk sebagai '+S.prof.nama.split(' ')[0])})+'">Verifikasi & masuk</button><div class="hint" style="text-align:center;margin-top:12px"><a style="color:var(--pri);cursor:pointer" onclick="'+act(function(){S.lg=0;render()})+'">‹ Ganti email</a></div>';
+return '<div style="display:grid;grid-template-columns:1fr 1fr;height:100vh"><div style="background:linear-gradient(160deg,var(--navy),var(--pri));color:#fff;padding:56px;display:flex;flex-direction:column"><div class="row" style="gap:10px;cursor:pointer" onclick="'+act(function(){go('land')})+'"><div class="lg0" style="background:#fff;color:var(--pri)">⚡</div><b style="font-size:18px">Flash Merek</b></div><div style="margin:auto 0"><div style="font-size:44px;font-weight:800;line-height:1.1">Urusan merek,<br>tanpa ribet.</div><div style="margin-top:28px;line-height:2.1;opacity:.9">✓ Logo Studio siap-DJKI<br>✓ Formulir terisi otomatis<br>✓ Tracking sampai sertifikat</div></div></div><div style="display:grid;place-items:center;padding:48px"><div style="width:100%;max-width:420px">'+right+'</div></div></div>'}
+
+/* --- Home --- */
+function wHome(){var ks=S.role=='kons',L=ks?S.clients:S.mine;
+if(!ks)return wshell('home','Merek Saya',newBtn(),'<div class="wh1">Halo, '+esc(S.prof.nama.split(' ')[0])+'</div><p class="wsub">Kelola pendaftaran merek dagang Anda.</p><div class="g2" style="margin-bottom:24px">'+
+'<div class="card row" style="cursor:pointer;gap:16px" onclick="'+act(function(){S.tab=0;go('wiz')})+'"><div class="svc ic" style="width:52px;height:52px;border-radius:12px;background:var(--sel);display:grid;place-items:center;font-size:24px">📝</div><div class="gr"><b style="font-size:16px">Daftar merek baru</b><div class="p" style="font-size:13px">Isi data sekali — kami siapkan 9 tab DJKI.</div></div><span>→</span></div>'+
+'<div class="card row" style="cursor:pointer;gap:16px" onclick="'+act(function(){go('studio')})+'"><div style="width:52px;height:52px;border-radius:12px;background:var(--wnbg);display:grid;place-items:center;font-size:24px">🎨</div><div class="gr"><b style="font-size:16px">'+(S.logo.sel>=0?'Logo "'+esc(S.logo.nama)+'" siap ✓':'Pilih logo')+'</b><div class="p" style="font-size:13px">4 opsi etiket siap-DJKI dari nama merek.</div></div><span>→</span></div></div><div class="row" style="margin-bottom:12px"><b class="gr" style="font-size:17px">Tracking pendaftaran</b></div>'+ttable(L));
+var act1=L.filter(function(c){return c.st<7}).length,fl=L.filter(function(c){return c.flag});
+return wshell('home','Beranda',newBtn(),'<div class="wh1">Halo, '+esc(S.prof.nama.split(' ')[0])+'</div><p class="wsub">'+esc(S.prof.kantor||'Konsultan KI')+' · ringkasan permohonan klien.</p><div class="g4" style="margin-bottom:24px">'+[['Permohonan aktif',act1],['Perlu tindakan',fl.length],['Terdaftar',L.filter(function(c){return c.st>=7}).length],['Total klien',L.length]].map(function(k){return '<div class="card kpi"><span>'+k[0]+'</span><b>'+k[1]+'</b></div>'}).join('')+'</div><div style="display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start"><div><b style="font-size:17px;display:block;margin-bottom:12px">Permohonan klien</b>'+ttable(L)+'</div><div><b style="font-size:17px;display:block;margin-bottom:12px">Perlu tindakan</b>'+(fl.length?fl.map(function(c){return '<div class="card" style="border-color:var(--wn);cursor:pointer" onclick="'+act(function(){S.cur=c;go('detail')})+'"><span class="pill wn">Tenggat</span><div style="margin-top:8px"><b>'+esc(c.n)+'</b><div class="p" style="font-size:13px">'+c.flag+'</div></div></div>'}).join(''):'<div class="card p">Tidak ada.</div>')+'<div class="card" style="background:var(--side)"><b>Mulai cepat</b><div style="margin-top:10px;display:flex;flex-direction:column;gap:8px"><button class="btn gh blk" onclick="'+act(function(){go('studio')})+'">🎨 Logo Studio</button><button class="btn gh blk" onclick="'+act(function(){skmSheet()})+'">🔎 Cek kelas SKM</button></div></div></div></div>')}
+function wTrack(){var L=S.role=='kons'?S.clients:S.mine;S.tf=S.tf||'Semua';var F=['Semua','Berjalan','Perlu tindakan','Terdaftar'],fl=L.filter(function(c){return S.tf=='Semua'||(S.tf=='Berjalan'&&c.st<7&&!c.flag)||(S.tf=='Perlu tindakan'&&c.flag)||(S.tf=='Terdaftar'&&c.st>=7)});
+return wshell('track','Tracking',newBtn(),'<div class="wh1">Tracking pendaftaran</div><p class="wsub">Kelola pendaftaran merek dagang'+(S.role=='kons'?' klien':' Anda')+'.</p><div style="margin-bottom:14px">'+chips(F,S.tf,function(t){S.tf=t;render()})+'</div>'+ttable(fl))}
+
+/* --- Wizard --- */
+function wWiz(){var t=S.tab,r=[tG,tP,tK,tPr,tM,tKl,tL,tR,tB][t](),f=S.f;
+var need=DOCS.filter(function(d){return d[3]()}),done=need.filter(function(d){return f.docs[d[0]]}).length,c=PAL[S.logo.sty][0];
+var steps='<div class="card sticky" style="padding:12px">'+TABS.map(function(x,i){return '<div class="wstep'+(i==t?' on':'')+'" onclick="'+act(function(){if(S.billCode&&i<8)return toast('Data terkunci setelah kode billing dibuat');keep();S.tab=i;render()})+'"><span class="num'+(i<t?' d':'')+'">'+(i<t?'✓':i+1)+'</span>'+x+'</div>'}).join('')+'</div>';
+var sum='<div class="sticky"><div class="card"><b>Ringkasan</b><div style="margin:14px 0;display:flex;gap:12px;align-items:center"><div class="lgi" style="width:72px;flex:none">'+(S.logo.sel>=0?LOGOS[S.logo.sel](S.logo.nama,c):'<span style="font-size:11px;color:var(--mu)">Logo</span>')+'</div><div><b>'+esc(f.merek||'Nama merek')+'</b><div class="hint">'+esc(f.tipe)+(f.kelas?' · Kelas '+f.kelas:'')+'</div></div></div>'+(S.logo.sel<0?'<button class="btn gh blk" onclick="'+act(function(){keep();go('studio')})+'">🎨 Pilih logo</button>':'')+'</div>'+
+'<div class="card"><div class="row"><b class="gr">Kelengkapan berkas</b><span class="pill '+(done==need.length?'ok':'wn')+'">'+done+'/'+need.length+'</span></div><div style="margin-top:8px">'+need.map(function(d){return '<div class="kv"><span>'+d[1]+'</span><span>'+(f.docs[d[0]]?'✓':'—')+'</span></div>'}).join('')+'</div></div>'+
+'<div class="card" style="background:var(--side)"><div class="kv" style="border:0"><span>Paket Umum · all-in</span><b>'+rp(fee())+'</b></div><div class="hint">Termasuk PNBP, logo, dan jasa Konsultan KI.</div></div></div>';
+var foot=r.noft?'':'<div class="wfoot"><button class="btn gh" onclick="'+act(function(){keep();if(t==0)go('home');else{S.tab--;render()}})+'">‹ Kembali</button><div class="row"><button class="btn gh" onclick="'+act(function(){keep();toast('Draft tersimpan')})+'">💾 Simpan Draft</button><button class="btn" '+(r.ok?'':'disabled')+' onclick="'+act(function(){keep();if(r.next){r.next();return}S.tab++;render()})+'">'+(r.cta||'Simpan & lanjutkan')+' →</button></div></div>';
+return wshell('wiz','Permohonan Baru · Tab '+TABS[t],'<span class="pill ok">Draf tersimpan otomatis ✓</span>','<div class="wz">'+steps+'<div class="card wform"><div class="fgrid">'+r.h+'</div>'+foot+'</div>'+sum+'</div>')}
+
+/* --- Logo Studio --- */
+function wStudio(){var L=S.logo,n=L.nama||'Merek Anda',c=PAL[L.sty][0];
+var body='<div class="wh1">🎨 Logo Studio</div><p class="wsub">Nama merek is all you need — 4 opsi etiket siap-DJKI (AI · simulasi).</p><div style="display:grid;grid-template-columns:340px 1fr;gap:24px;align-items:start"><div class="card sticky"><label class="l" style="margin-top:0">Nama merek</label><input id="ln" value="'+esc(L.nama)+'" placeholder="Kopi Lereng" oninput="S.logo.nama=this.value"><label class="l">Bidang usaha</label><input value="'+esc(L.bid)+'" placeholder="kedai kopi" oninput="S.logo.bid=this.value"><label class="l">Gaya</label>'+chips(Object.keys(PAL),L.sty,function(t){S.logo.sty=t;if(S.logo.made)S.logo.sel=-1;render()})+'<button class="btn blk" style="margin-top:14px" onclick="'+act(function(){if(!S.logo.nama){toast('Isi nama merek dulu');return}S.logo.made=1;S.logo.sel=-1;render();toast('✨ 4 opsi logo dibuat')})+'">✨ Generate logo</button></div><div>'+
+(L.made?'<div class="g4">'+LOGOS.map(function(f,i){return '<div class="lgi'+(L.sel==i?' on':'')+'" onclick="'+act(function(){S.logo.sel=i;render()})+'">'+f(n,c)+'</div>'}).join('')+'</div>':'<div class="card" style="text-align:center;padding:64px;border-style:dashed"><div style="font-size:44px;opacity:.5">🎨</div><p class="p" style="margin-top:10px">Ketik nama merek lalu klik <b>Generate logo</b>.</p></div>')+
+(L.sel>=0?'<div class="card" style="margin-top:20px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center"><div><b>Cek syarat DJKI</b>'+[['Format','JPG'],['Ukuran','1024×1024 · ±380KB (≤2MB)'],['Warna',PAL[L.sty][1]+', Hitam, Putih'],['Kemiripan PDKI','Rendah (simulasi)']].map(function(r){return '<div class="kv"><span>'+r[0]+'</span><span>✓ '+r[1]+'</span></div>'}).join('')+'</div><button class="btn" style="padding:14px 22px" onclick="'+act(useLogo)+'">Pakai di permohonan →</button></div>':'')+'</div></div>';
+return S.prof.nama?wshell('studio','Logo Studio','',body):wFocus('Logo Studio',function(){go('land')},body)}
+
+/* --- Detail --- */
+function wDetail(){var c=S.cur,steps=c.st>=4&&c.st<=6?[0,1,2,3,c.st,7,8]:[0,1,2,3,7,8];
+return wshell('track',esc(c.n),'<button class="btn gh" onclick="'+act(function(){toast('Update status dikirim ke klien')})+'">Kirim update</button>','<div class="row" style="margin-bottom:20px"><button class="bk" onclick="'+act(function(){go('track')})+'">‹</button><div class="gr"><div class="wh1" style="font-size:26px">'+esc(c.n)+'</div><div class="p">'+c.no+' · Kelas '+c.k+'</div></div><span class="pill '+(c.st>=7?'ok':c.flag?'wn':'in')+'" style="font-size:13px">'+ST[c.st][0]+'</span></div><div style="display:grid;grid-template-columns:1fr 1.3fr;gap:20px;align-items:start"><div><div class="card">'+[['No. permohonan',c.no],['Pemohon',c.p],['Kelas',c.k],['Tgl. pengajuan',c.d]].map(function(r){return '<div class="kv"><span>'+r[0]+'</span><span>'+esc(r[1])+'</span></div>'}).join('')+'<button class="btn gh blk" style="margin-top:14px" onclick="'+act(function(){toast('Dokumen diunduh')})+'">⬇ '+(c.st>=8?'Sertifikat':'Tanda terima')+'</button></div>'+(c.flag?'<div class="card" style="border-color:var(--wn)"><span class="pill wn">Butuh tindakan</span><p class="p" style="font-size:14px;margin:8px 0 12px">'+c.flag+'.</p><button class="btn" onclick="'+act(function(){toast('Draf tanggapan disiapkan (simulasi)')})+'">Siapkan tanggapan</button></div>':'')+'</div><div class="card"><b>Status DJKI</b><div class="tl" style="margin-top:16px">'+steps.map(function(i){var cl=i<c.st||c.st==8?'d':i==c.st?'c':'';if(i>=4&&i<=6&&i==c.st)cl='x';return '<div class="'+cl+'"><b style="font-size:14px;color:'+(cl?'var(--tx)':'var(--mu)')+'">'+ST[i][0]+'</b><div style="font-size:12px;color:var(--sub)">'+ST[i][1]+(i==c.st&&c.st<8?' · sedang berjalan':'')+'</div></div>'}).join('')+'</div></div></div>')}
+function wMe(){return wshell('me','Profil','','<div class="wh1">Profil</div><p class="wsub">Data akun Anda.</p><div class="card" style="max-width:560px">'+[['Nama',S.prof.nama],['Email',S.ue||'—'],['Peran',S.role=='kons'?'Konsultan KI':'Pemilik usaha'],['No. konsultan',S.prof.noKons||'—'],['Kantor',S.prof.kantor||'—']].map(function(r){return '<div class="kv"><span>'+r[0]+'</span><span>'+esc(r[1])+'</span></div>'}).join('')+'<button class="btn gh" style="margin-top:16px" onclick="'+act(function(){S.ob=0;S.prof.nama='';go('land')})+'">Keluar</button></div>')}
+function wDone(){return wFocus('Selesai',function(){go('home')},'<div style="text-align:center;max-width:520px;margin:40px auto"><div style="font-size:64px">🎉</div><div class="wh1" style="margin-top:12px">Permohonan diterima DJKI</div><p class="wsub">'+esc(S.cur.n)+' · '+S.cur.no+'</p><div class="row" style="justify-content:center"><button class="btn" onclick="'+act(function(){go('detail')})+'">Lihat tracking</button><button class="btn gh" onclick="'+act(function(){go('home')})+'">Beranda</button></div></div>')}
+function wOb(){return wFocus('Masuk Konsultan KI',function(){go('land')},'<div style="max-width:480px;margin:0 auto" class="card">'+ob().replace(/<div class="prog">[\s\S]*?<\/div><\/div>/,'')+'</div>')}
+var WVIEWS={land:wLand,asm:wAsm,login:wLogin,home:wHome,track:wTrack,wiz:wWiz,studio:wStudio,detail:wDetail,me:wMe,doneScr:wDone};
+
 /* ===== RENDER ===== */
 var VIEWS={login:login,land:land,asm:asm,studio:studio,ob:ob,home:home,wiz:wiz,doneScr:doneScr,detail:detail,track:track,me:me};
-function render(){_a=[];A=A||document.getElementById('app');try{var _html=(VIEWS[S.scr]||land)();A.classList.toggle('nosb',_html.indexOf('class="tb"')<0);A.innerHTML=_html+'<div class="sheet"></div><div class="toast"></div>';var s=A.querySelector('.sc');if(s)s.scrollTop=0;initSig()}catch(e){console.warn('render',e);A.innerHTML='<div class="sc"><b>Terjadi kesalahan tampilan.</b></div>'}}
-window.doA=doA;try{var _t=localStorage.getItem('fm_ttd');if(_t){S.f.ttdImg=_t;S.f.docs.ttd=1;S.f.ttdAt='sesi sebelumnya'}}catch(_){}
+function render(){_a=[];A=A||document.getElementById('app');try{var W=isWeb()&&!!WVIEWS[S.scr];document.body.classList.toggle('web',W);A.classList.toggle('web',W);var _html=W&&WVIEWS[S.scr]?WVIEWS[S.scr]():(VIEWS[S.scr]||land)();A.classList.toggle('nosb',_html.indexOf('class="tb"')<0);A.innerHTML=_html+'<div class="sheet"></div><div class="toast"></div>';var s=A.querySelector('.sc');if(s)s.scrollTop=0;initSig()}catch(e){console.warn('render',e);A.innerHTML='<div class="sc"><b>Terjadi kesalahan tampilan.</b></div>'}}
+window.doA=doA;var _rw=isWeb();window.addEventListener('resize',function(){if(isWeb()!=_rw){_rw=isWeb();render()}});try{var _t=localStorage.getItem('fm_ttd');if(_t){S.f.ttdImg=_t;S.f.docs.ttd=1;S.f.ttdAt='sesi sebelumnya'}}catch(_){}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',render);else render();
 </script></body></html>
